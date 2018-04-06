@@ -8,5 +8,7 @@ object ApplicationBuild extends Build {
 
   lazy val offers = Project("offers", base = file("offers"))
 
-  val main = Project(id = "test-project", base = file(".")) aggregate(offers)
+  lazy val scalaWithCats = Project("scalawithcats", base = file("scalawithcats"))
+
+  val main = Project(id = "test-project", base = file(".")) aggregate(offers,scalaWithCats)
 }
